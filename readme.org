@@ -1,0 +1,4 @@
+* My CV
+  - uses ~res.cls~ from https://ctan.org/pkg/res
+  - compiles with ~xelatex~
+  - may not always be up to date
