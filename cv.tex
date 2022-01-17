@@ -1,7 +1,10 @@
 % compiler: xelatex cv.tex
 % run: xelatex cv.tex; okular cv.pdf
 
-\documentclass[margin,10pt,a4paper]{res}
+\let\latexnofiles\nofiles
+\let\nofiles\relax
+
+\documentclass[margin]{res}
 \usepackage[german]{babel}
 \usepackage[T1]{fontenc}
 % \usepackage{unicode-math}
@@ -82,7 +85,7 @@ Johannes Kepler Gymnasium, Stuttgart
  
 \section{Work Experience}
 
-{\sl Research Internship} \hfill 04/2019--10/2020 \\
+{\sl Research internship} \hfill 04/2019--10/2020 \\
 Bomblies Lab, Plant Evolutionary Genetics, Institute for Molecular Plant Biology, Department of Biology, ETH Zurich --- Zurich, Switzerland
 
 
@@ -151,6 +154,8 @@ PZO Oberlimpurg  --- Schwäbisch Hall, Germany
 \begin{etaremune}
 \setlength\itemsep{0ex}
 %\begin{itemize} \itemsep -2pt % Reduce space between items
+
+\item Weitz, A.P., Dukic, M., \textbf{Zeitler, L.}, and Bomblies, K. (2021). Male meiotic recombination rate varies with seasonal temperature fluctuations in wild populations of autotetraploid Arabidopsis arenosa. Molecular Ecology 30, 4630–4641. DOI:\href{https://doi.org/10.1111/mec.16084}{10.1111/mec.16084}
 
 \item \textbf{Zeitler, L.}, Ross-Ibarra, J., and Stetter, M.G. (2020). Selective Loss of Diversity in Doubled-Haploid Lines from European Maize Landraces. G3: Genes, Genomes, Genetics 10, 2497-2506. DOI:\href{https://doi.org/10.1534/g3.120.401196}{10.1534/g3.120.401196}
 
