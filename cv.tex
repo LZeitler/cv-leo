@@ -1,16 +1,23 @@
 % compiler: xelatex cv.tex
-% run: xelatex cv.tex; okular cv.pdf
+% run: xelatex cv.tex; okular cv.pdf # or pdflatex
 
 \let\latexnofiles\nofiles
 \let\nofiles\relax
 
-\documentclass[margin]{res}
+\documentclass[margin,a4paper]{res}
 \usepackage[german]{babel}
 \usepackage[T1]{fontenc}
 % \usepackage{unicode-math}
 \usepackage{hyperref}
+\usepackage{enumitem}
 \usepackage{etaremune}
 \usepackage[sc,osf]{mathpazo}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\AtBeginDocument{\thispagestyle{empty}} % for not having footer on first page
+\fancyhf{}
+\rfoot{CV Leo Zeitler $\cdot$ \thepage /\pageref*{LastPage}}
 
 % \hyphenation{Hohenheim}
 
@@ -19,11 +26,15 @@
 
 \setlength{\textwidth}{13cm} % 5.1in (13cm) Text width of the document
 
-% \topmargin=-0.5cm
-\oddsidemargin -.6cm  % negative val moves stuff to left
-\addtolength{\resumewidth}{.6cm}
-\addtolength{\textwidth}{.6cm}
-\addtolength{\textheight}{2cm}
+%% \topmargin=-0.5cm
+%\oddsidemargin -.6cm  % negative val moves stuff to left
+%\addtolength{\resumewidth}{.6cm}
+%\addtolength{\textwidth}{.6cm}
+%\addtolength{\textheight}{2cm}
+
+\setlength{\headheight}{12.0pt}      % fancyhdr avoid warning
+\addtolength{\topmargin}{-12.0pt}
+\renewcommand{\headrulewidth}{0pt}   % fancyhdr remove header
 % \evensidemargin -1.5cm % does nothing here 
 % \textwidth=6.0in
 % \itemsep=0in
@@ -39,13 +50,13 @@
 
 \moveleft\hoffset\vbox{\hrule width\resumewidth height .5pt}\smallskip % Horizontal line after name; adjust line thickness by changing the '1pt'
 
-\moveleft.5\hoffset\centerline{University of Bern} % Your address
-\moveleft.5\hoffset\centerline{Institute of Plant Sciences} % Your address
-\moveleft.5\hoffset\centerline{Altenbergrain 21} % Your address
-\moveleft.5\hoffset\centerline{3013 Bern}
+\moveleft.5\hoffset\centerline{University of Fribourg} % Your address
+\moveleft.5\hoffset\centerline{Department of Biology} % Your address
+\moveleft.5\hoffset\centerline{Chemin Du Musée 15} % Your address
+\moveleft.5\hoffset\centerline{1700 Fribourg}
 \moveleft.5\hoffset\centerline{Switzerland}
 \moveleft.5\hoffset\centerline{\href{mailto:leo.zeitler@gmail.com}{leo.zeitler@gmail.com}}
-\moveleft.5\hoffset\centerline{\href{https://twitter.com/leo_zeitler}{twitter: @leo\_zeitler}}
+% \moveleft.5\hoffset\centerline{\href{https://twitter.com/leo_zeitler}{twitter: @leo\_zeitler}}
 \moveleft.5\hoffset\centerline{\href{https://github.com/LZeitler}{GitHub: LZeitler}}
 % \moveleft.5\hoffset\centerline{+41\,(0)\,78\,34\,34\,077}
 
@@ -60,13 +71,13 @@
 
 \textbf{\textit{PhD Candidate Population Genomics}} \hfill 10/2020--current \\
 Institute of Plant Sciences, University of Bern, Switzerland \\
-Advisors: Dr.~Kimberly Gilbert \& Prof.~Dr.~Christian Parisod
+Department of Biology, University of Fribourg, Switzerland \\
+Advisors: Dr.~Kimberly Gilbert \& Prof.~Christian Parisod
 
 
 \textbf{\textit{M.Sc. Crop Sciences}} \hfill 09/2016--03/2019 \\
 University of Hohenheim, Stuttgart, Germany \\
-Thesis: Loss of genetic diversity in doubled-haploid lines from European maize landraces \\
-% Description: Analysis of genomic data of 137 individuals from five European landrace populations and 404 doubled haploid lines derived from these populations to study the potential loss of genetic diversity.\\
+Thesis: Loss of genetic diversity in doubled-haploid lines from European maize landraces\\
 Advisors: Prof.~Jeffrey Ross-Ibarra, Dr.~Markus Stetter \& Prof.~Karl Schmid
 
 
@@ -99,7 +110,7 @@ Ross-Ibarra Lab, Department of Plant Sciences and Center for Population Biology,
 % \end{itemize}
 
 
-{\sl Student assistant} \hfill 09/2015--03/2018 \\
+{\sl Research assistant} \hfill 09/2015--03/2018 \\
 Institute of Plant Breeding, Seed Science and Population Genetics, University of Hohenheim --- Stuttgart, Germany
 
 % \begin{itemize}\itemsep -2pt \vspace{-12pt}  % Reduce space between items
@@ -141,19 +152,21 @@ PZO Oberlimpurg  --- Schwäbisch Hall, Germany
 %----------------------------------------------------------------------------------------
 %	PUBLICATIONS SECTION
 %----------------------------------------------------------------------------------------
- 
+
+%\newpage
 \section{Publications} % Cell Style using Zotero copy to clipboard
-% \subsection{Submitted}
-% \begin{etaremune}
-% \setlength\itemsep{0ex}
-% \item \textbf{Zeitler, L.}, Ross-Ibarra, J., and Stetter, M.G. (2020). Selective Loss of Diversity in Doubled-Haploid Lines from European Maize Landraces. G3: Genes, Genomes, Genetics 10, 2497–2506. DOI:\href{https://doi.org/10.1534/g3.120.401196}{10.1534/g3.120.401196}
-% \end{etaremune}
+%\subsection{Submitted}
+%\begin{etaremune}
+%\setlength\itemsep{0ex}
+%\item \textbf{Zeitler, L.}, Parisod, C., and Gilbert, K.J. (2023). Purging due to self-fertilization does not prevent accumulation of expansion load. bioRxiv DOI:\href{https://www.biorxiv.org/content/10.1101/2022.12.19.521096v3}{\nolinkurl{10.1101/2022.12.19.521096}}
+%\end{etaremune}
 
-
-\subsection{Published}
+%\subsection{Published}
 \begin{etaremune}
 \setlength\itemsep{0ex}
 %\begin{itemize} \itemsep -2pt % Reduce space between items
+
+\item \textbf{Zeitler, L.}, Parisod, C., and Gilbert, K.J. (2023). Purging due to self-fertilization does not prevent accumulation of expansion load. PLOS Genetics 19, e1010883. DOI:\href{https://doi.org/10.1371/journal.pgen.1010883}{10.1371/journal.pgen.1010883}
 
 \item Weitz, A.P., Dukic, M., \textbf{Zeitler, L.}, and Bomblies, K. (2021). Male meiotic recombination rate varies with seasonal temperature fluctuations in wild populations of autotetraploid Arabidopsis arenosa. Molecular Ecology 30, 4630–4641. DOI:\href{https://doi.org/10.1111/mec.16084}{10.1111/mec.16084}
 
@@ -170,12 +183,54 @@ PZO Oberlimpurg  --- Schwäbisch Hall, Germany
 %----------------------------------------------------------------------------------------
 
 \section{Grants \& Awards} 
-\begin{itemize}\itemsep -2pt %\vspace{-8pt} 
-\item KWS Master Scholarship (2016-2018)
-\item Herzog Carl Scholarship (2018)
-\item Travel grant from Baden-Württembergische Ministerium für Wissenschaft, Forschung und Kunst (2018)
-\item 3rd Poster Prize at ELLS Student Conference, Wageningen, 2018
-\item Best student research group project of the Agricultural Faculty, 4. Humboldt reloaded-Jahrestagung, 2015
+\begin{itemize}[leftmargin=0pt]\itemsep 2pt
+\item[] KWS Master Scholarship (2016-2018)
+\item[] Herzog Carl Scholarship (2018)
+\item[] Travel grant from Baden-Württembergische Ministerium für Wissenschaft, Forschung und Kunst (2018)
+\item[] 3rd Poster Prize at ELLS Student Conference, Wageningen (2018)
+\item[] Best student research group project of the Agricultural Faculty, 4. Humboldt reloaded-Jahrestagung (2015)
+\end{itemize}
+
+%---------------------------------------------------------------------------------------
+%       PRESENTATIONS (& WORKSHOPS)
+%---------------------------------------------------------------------------------------
+
+\section{Conference Presentations} % newest first
+
+{\sl{Biology24 --- Zürich, Switzerland}} \hfill January 18-19, 2024\\
+What can we learn from Runs of Homozygosity: Distinguishing sources of inbreeding with machine learning and runs of homozygosity --- Talk
+
+{\sl{Computational Phylogenetics Group --- Lausanne, Switzerland}} \hfill January 10, 2024\\
+Distinguishing sources of inbreeding with machine learning and runs of homozygosity --- Talk
+
+{\sl{Trilab, University of Bern --- Bern, Switzerland}} \hfill June 20, 2023\\
+Distinguishing inbreeding causes with machine learning and runs of homozygosity --- Talk
+
+{\sl{Biology23 --- Geneva, Switzerland}} \hfill February 16-17, 2023\\
+Genetic purging due to self-fertilization does not prevent accumulation of expansion load --- Talk
+
+{\sl{Department of Biology Seminar --- Fribourg, Switzerland}} \hfill December 15, 2022\\
+Expansion load during a shift in mating system --- Talk
+
+{\sl{ESEB 2022 --- Prague, Czech Republic}} \hfill August 14-19, 2022\\
+Shifts to selfing during range expansion cannot overcome the accumulation of genetic load --- Talk
+
+{\sl{Trilab, University of Bern --- Bern, Switzerland}} \hfill June 27, 2022\\
+Interaction of demography and mating system change during range expansion --- Talk
+
+{\sl{61st Annual Maize Genetics Conference --- St. Louis, MO, USA }} \hfill March 14-17, 2019\\
+Loss of genetic diversity in doubled-haploid lines from European maize landraces --- Poster
+
+{\sl{10th ELLS Scientific Student Conference --- Wageningen, Netherlands}} \hfill November 9-10, 2018\\
+Loss of diversity in doubled-haploid lines from European maize landraces --- Poster Presentation
+
+%---------------------------------------------------------------------------------------
+%	Volunteer, Service, Outreach, Teaching, etc. SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Volunteer}
+\begin{itemize}[leftmargin=0pt]\itemsep 2pt
+\item[] Peer Review: Evolutionary Applications
 \end{itemize}
 
 
@@ -186,10 +241,10 @@ PZO Oberlimpurg  --- Schwäbisch Hall, Germany
 \section{Interest \& Skills } 
 
 {\sl{Genetics}}\\
-population genetics (diversity, domestication, adaptation, genome dynamics), quantitative genetics (GWAS, mixed models)
+population genetics (genetic diversity, demographic inference, adaptation), quantitative genetics (GWAS, mixed models)
  
 {\sl{Bioinformatics}}\\
-Statistical analysis (\textsf{R}, \textsc{SAS}), python, population genetics and bioinformatics using \textsf{R} and command line tools (plink, vcftools, BLAST, beagle, GATK, samtools), simulations using SLiM, bash scripting, cluster computing (slurm, LSF), galaxy, \LaTeX, emacs, MacOS, GNU/Linux
+Statistical analysis (\textsf{R}, \textsc{SAS}), python, population genetics and bioinformatics analysis, simulations using SLiM, bash scripting, cluster computing (slurm, LSF), galaxy, workflow management (snakemake), machine learning, \LaTeX, emacs, MacOS, GNU/Linux
 
 {\sl{Wet-Lab}}\\
 DNA extraction, plant cultivation
@@ -203,7 +258,6 @@ DNA extraction, plant cultivation
 \settowidth{\langbox}{Germang}
 \parbox[t]{\langbox}{\sl{German}}\ \ $\cdotp$\ \ \ Mother tongue\\
 \parbox[t]{\langbox}{\sl{English}}\ \ $\cdotp$\ \ \ Advanced
-% \parbox[t]{\langbox}{\sl{Latin}}\ \ $\cdotp$\ \ \ Basic
 
 %----------------------------------------------------------------------------------------
 %	Refs
@@ -211,10 +265,12 @@ DNA extraction, plant cultivation
 
 \section{References}
 
+Dr.~Kimberly Gilbert\ \ $\cdotp$\ \ \href{mailto:kimberly.gilbert@unifr.ch}{kimberly.gilbert@unifr.ch}\\
+Prof.~Christian Parisod\ \ $\cdotp$\ \ \href{mailto:christian.parisod@unifr.ch}{christian.parisod@unifr.ch}\\
 Prof.~Jeffrey Ross-Ibarra\ \ $\cdotp$\ \ \href{mailto:rossibarra@ucdavis.edu}{rossibarra@ucdavis.edu}\\
-Dr.~Markus Stetter\ \ $\cdotp$\ \ \href{mailto:m.stetter@uni-koeln.de}{m.stetter@uni-koeln.de}\\
-Prof.~Kirsten Bomblies\ \ $\cdotp$\ \ \href{mailto:kirsten.bomblies@biol.ethz.ch}{kirsten.bomblies@biol.ethz.ch}\\
-Prof.~Karl Schmid\ \ $\cdotp$\ \ \href{mailto:karl.schmid@uni-hohenheim.de}{karl.schmid@uni-hohenheim.de}\\
+% Dr.~Markus Stetter\ \ $\cdotp$\ \ \href{mailto:m.stetter@uni-koeln.de}{m.stetter@uni-koeln.de}\\
+% Prof.~Kirsten Bomblies\ \ $\cdotp$\ \ \href{mailto:kirsten.bomblies@biol.ethz.ch}{kirsten.bomblies@biol.ethz.ch}\\
+% Prof.~Karl Schmid\ \ $\cdotp$\ \ \href{mailto:karl.schmid@uni-hohenheim.de}{karl.schmid@uni-hohenheim.de}\\
 
 
 %----------------------------------------------------------------------------------------
